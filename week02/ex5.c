@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int tribonacci(int);
-int tribonacciRec(int);
 
 int main(void){
     printf("%lld\n", tribonacci(4));
