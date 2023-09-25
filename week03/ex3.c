@@ -10,6 +10,49 @@
 struct Directory;
 struct File;
 
+void add_dir(struct Directory *parent, const char* name);
+void add_file(struct File* file, struct Directory* directory);
+struct File* initialise_file(const char* name);
+void overwrite_to_file(struct File* file, const char* str);
+void append_to_file(struct File* file, const char* str);
+void printp_file(struct File* file);
+void print_file(struct File* file);
+
+int main(void){
+    Directory *root = (Directory *) malloc(sizeof(Directory));
+    if (root == NULL){
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    strcpy(root->name, "/");
+    strcpy(root->path, "/");
+    root->nf = 0;
+    root->nd = 0;
+
+    add_dir(root, "home");
+    add_dir(root, "bin");
+
+    add_file(initialise_file("bash"), root->directories[1]);
+    add_file(initialise_file("ex3_1.c"), root->directories[0]);
+    add_file(initialise_file("ex3_2.c"), root->directories[0]);
+
+    overwrite_to_file(&root->directories[0]->files[0], "int printf(const char * format, ...);");
+    overwrite_to_file(&root->directories[0]->files[1], "//This is a comment in C language");
+
+    overwrite_to_file(&root->directories[1]->files[0], "Bourne Again Shell!!");
+
+    append_to_file(&root->directories[0]->files[0], "int main(){printf(”Hello World!”)}");
+
+    printp_file(&root->directories[0]->files[0]);
+    printp_file(&root->directories[0]->files[1]);
+    printp_file(&root->directories[1]->files[0]);
+
+    free(root);
+
+    return 0;
+}
+
 typedef struct File
 {
     short int id;
@@ -89,39 +132,4 @@ void printp_file(File* file){
 
 void print_file(File* file){
     printf("%s\n", file->data);
-}
-
-int main(void){
-    Directory *root = (Directory *) malloc(sizeof(Directory));
-    if (root == NULL){
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-
-    strcpy(root->name, "/");
-    strcpy(root->path, "/");
-    root->nf = 0;
-    root->nd = 0;
-
-    add_dir(root, "home");
-    add_dir(root, "bin");
-
-    add_file(initialise_file("bash"), root->directories[1]);
-    add_file(initialise_file("ex3_1.c"), root->directories[0]);
-    add_file(initialise_file("ex3_2.c"), root->directories[0]);
-
-    overwrite_to_file(&root->directories[0]->files[0], "int printf(const char * format, ...);");
-    overwrite_to_file(&root->directories[0]->files[1], "//This is a comment in C language");
-
-    overwrite_to_file(&root->directories[1]->files[0], "Bourne Again Shell!!");
-
-    append_to_file(&root->directories[0]->files[0], "int main(){printf(”Hello World!”)}");
-
-    printp_file(&root->directories[0]->files[0]);
-    printp_file(&root->directories[0]->files[1]);
-    printp_file(&root->directories[1]->files[0]);
-
-    free(root);
-
-    return 0;
 }
