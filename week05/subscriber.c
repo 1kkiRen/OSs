@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
     char pipe_name[250] = "";
     while(1){
-        sprintf(pipe_name, "/mnt/c/Users/ikkiren/Documents/OSs/week05/tmp/ex1/s%d", id);
+        sprintf(pipe_name, "/tmp/ex1/s%d", id);
         FILE *fd = fopen(pipe_name, "r");
 
         char message[MAX_MSG_SIZE] = "";

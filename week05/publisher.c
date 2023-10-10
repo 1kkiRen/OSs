@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
     int n = atoi(argv[1]);
 
     char pipe_name[250] = "";
-    sprintf(pipe_name, "/mnt/c/Users/ikkiren/Documents/OSs/week05/tmp/ex1/s%d", n);
+    sprintf(pipe_name, "/tmp/ex1/s%d", n);
     FILE *fd = fopen(pipe_name, "w");
     fclose(fd);
 
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
             pid_t pid = fork();
             if(pid == 0){
                 char pipe_name[250] = "";
-                sprintf(pipe_name, "/mnt/c/Users/ikkiren/Documents/OSs/week05/tmp/ex1/s%d", i + 1);
+                sprintf(pipe_name, "/tmp/ex1/s%d", i + 1);
                 FILE *fd = fopen(pipe_name, "w");
                 fprintf(fd, "%s", message);
                 fflush(fd);
