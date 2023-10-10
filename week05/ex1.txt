@@ -1,0 +1,14 @@
+channel.c: This code creates a pipe, forks a child process, and sends a message from the parent process to the child process and vice versa.
+
+subscriber.c: This code is a subscriber process, that reads from a pipe and prints the message it receives.
+publisher.c: The code creates n named pipes and then in a infinite loop it reads message from stdin and then writes them to all named pipes.
+
+Q: Why we need to create n named pipes for n subscribers?
+A: The reason for creating n named pipes for n subscribers is to allow for inter-process communication between the publisher process and
+each of the subscriber processes. Each named pipe is used to send messages from the publisher to a specific subscriber. By creating n named pipes,
+the publisher can send messages to each subscriber individually, without having to send the same message to all subscribers at once. This allows
+for more efficient communication and reduces the risk of message loss or corruption.
+
+Explanation:
+Pipes can be used to establish a unidirectional communication channel between two related processes,
+while named pipes can be used to establish bidirectional communication between unrelated processes.

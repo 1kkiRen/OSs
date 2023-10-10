@@ -1,0 +1,4 @@
+As the task 3, this task is to multithread the program.
+The main point is that the runtime lowers as the number of threads increases, which corresponds to the runtime in ex4_res.txt.
+But if we compare this results to the results in ex3_res.txt, we can see that the runtime is much longer than the runtime in ex3_res.txt.
+It could be because of the overhead of creating threads and the overhead of the mutex lock.

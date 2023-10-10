@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
     int u[120], v[120];
     int n, sum = 0;
     FILE *fp;
-    fp = fopen("temp.txt", "w+");
+    fp = fopen("temp.txt", "w");
 
     if(fp == NULL){
         printf("Error opening file!\n");

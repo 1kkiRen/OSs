@@ -1,0 +1,5 @@
+Total primes: 664579. It took 2.006246
+Total primes: 664579. It took 1.335868
+Total primes: 664579. It took 0.791879
+Total primes: 664579. It took 0.280070
+Total primes: 664579. It took 0.159415

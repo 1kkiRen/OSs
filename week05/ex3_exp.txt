@@ -1,0 +1,2 @@
+This task is to multithread the program.
+The main point is that the runtime lowers as the number of threads increases, which corresponds to the runtime in ex3_res.txt.
