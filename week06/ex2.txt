@@ -1,0 +1,11 @@
+Q: Change the macro TRI_BASE to a small number like 100 and run
+the scheduler again. Compare your results before and after the
+change?
+
+A: The triangular numbers became lower.
+
+Q: Change the arrival time of all processes to make all of them zero,
+then run the scheduler again. In which order will processes be
+executed?
+
+A: Both average waiting time and average turnaround time increased.

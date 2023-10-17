@@ -1,0 +1,1 @@
+Both average waiting time and turnaround time increased in comparison with scheduler.c and scheduler_sjf.c
