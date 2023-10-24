@@ -1,14 +1,14 @@
 First Fit:
-Throughput = 239.912571
-Time = 0.225082
+Throughput = 237.852073
+Time = 0.227032
 
 Best Fit:
-Throughput = 133.653880
-Time = 0.404029
+Throughput = 123.306966
+Time = 0.437931
 
 Worst Fit:
-Throughput = 152.396654
-Time = 0.354338
+Throughput = 142.565321
+Time = 0.378774
 
 The First Fit algorithm is the best one. It has the highest throughput and the lowest time.
 The Best Fit algorithm is the worst one. It has the lowest throughput and the highest time.

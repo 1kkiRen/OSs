@@ -6,12 +6,12 @@
 
 #define MAX_SIZE 10000000
 
-int memory[MAX_SIZE];
+unsigned int memory[MAX_SIZE];
 
-void allocate_first_fit(int adrs, int size);
-void allocate_best_fit(int adrs, int size);
-void allocate_worst_fit(int adrs, int size);
-void clear(int adrs);
+void allocate_first_fit(unsigned int adrs, int size);
+void allocate_best_fit(unsigned int adrs, int size);
+void allocate_worst_fit(unsigned int adrs, int size);
+void clear(unsigned int adrs);
 void print_throughput(int num_queries, double time);
 
 int main() {
@@ -37,14 +37,13 @@ int main() {
 
         clock_gettime(CLOCK_MONOTONIC, &start);
 
-
         while ((read = getline(&line, &len, fp)) != -1) {
             if (strcmp(line, "end") == 0) {
                 break;
             }
 
             char* token = strtok(line, " ");
-            int adrs = atoi(strtok(NULL, " "));
+            unsigned int adrs = (unsigned int) atoi(strtok(NULL, " "));
 
             if (strcmp(token, "allocate") == 0) {
                 int size = atoi(strtok(NULL, " "));
@@ -81,7 +80,7 @@ int main() {
     return 0;
 }
 
-void allocate_first_fit(int adrs, int size) {
+void allocate_first_fit(unsigned int adrs, int size) {
     int start = -1;
     int end = -1;
     int count = 0;
@@ -114,7 +113,7 @@ void allocate_first_fit(int adrs, int size) {
     }
 }
 
-void allocate_best_fit(int adrs, int size){
+void allocate_best_fit(unsigned int adrs, int size){
     int start = -1;
     int end = -1;
     int count = 0;
@@ -150,7 +149,7 @@ void allocate_best_fit(int adrs, int size){
     }
 }
 
-void allocate_worst_fit(int adrs, int size) {
+void allocate_worst_fit(unsigned int adrs, int size) {
     int start = -1;
     int end = -1;
     int count = 0;
@@ -188,7 +187,7 @@ void allocate_worst_fit(int adrs, int size) {
     return;
 }
 
-void clear(int adrs) {
+void clear(unsigned int adrs) {
     for (int i = 0; i < MAX_SIZE; i++) {
         if (memory[i] == adrs) {
             memory[i] = 0;
