@@ -15,8 +15,8 @@ void clear(unsigned int adrs);
 void print_throughput(int num_queries, double time);
 
 int main() {
-    FILE *fp;
-    char *line = NULL;
+    FILE* fp;
+    char* line = NULL;
     size_t len = 0;
     ssize_t read;
     int num_queries = 0;
