@@ -6,7 +6,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/mman.h>
-#include <time.h>
 
 #define FILE_SIZE 500 * 1024 * 1024
 
@@ -19,14 +18,12 @@ int main() {
 
     double time = 0;
 
-    struct timespec start, end;
-    clock_gettime(CLOCK_MONOTONIC, &start);
     ftruncate(fd, FILE_SIZE);
 
     char *map = mmap(NULL, FILE_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if (map == MAP_FAILED) {
         printf("Error mapping file!\n");
-        exit(EXIT_FAILURE)ж
+        exit(EXIT_FAILURE);
     }
 
     char *random = "/dev/random";
@@ -62,8 +59,6 @@ int main() {
     munmap(map, FILE_SIZE);
     close(fd);
     close(random_fd);
-    clock_gettime(CLOCK_MONOTONIC, &end);
-    time = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
-    printf("Time taken: %f\n", time);
+   
     return 0;
 }
