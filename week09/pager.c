@@ -45,6 +45,7 @@ int my_random(struct PTE* page_table) {
             break;
         }
     }
+    return victim_page;
 }
 
 int nfu(struct PTE* page_table) {
