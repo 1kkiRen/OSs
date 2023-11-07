@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     printf("Pager process (pid=%d) is running\n", pid);
 
     printf("Opening pagetable\n");
-    int page_table_fd = open("/mnt/c/Users/ikkiren/Documents/OSs/week09/tmp/ex2/pagetable", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    int page_table_fd = open("/tmp/ex2/pagetable", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     if (page_table_fd < 0) {
         perror("open");
         exit(EXIT_FAILURE);
@@ -76,7 +76,6 @@ int main(int argc, char *argv[]) {
     printf("-------------------------\n");
 
     printf("len of reference string: %ld\n", strlen(reference_string));
-
 
     int hit_valid = 0;
     int hit_invalid = 0;
