@@ -69,7 +69,6 @@ int aging(struct PTE* page_table) {
 
     for (int i = 0; i < pages; i++) {
         if (page_table[i].valid) {
-            // Shift the counter to the right and set the referenced bit
             page_table[i].referenced = (page_table[i].referenced >> 1) | (page_table[i].referenced << 7);
 
             if (page_table[i].referenced < min_counter) {
@@ -84,7 +83,7 @@ int aging(struct PTE* page_table) {
 
 int main(int argc, char *argv[]) {
     pid_t pid = getpid();
-    FILE *pid_file = fopen("/mnt/c/Users/ikkiren/Documents/OSs/week09/tmp/ex2/pager_pid", "w");   
+    FILE *pid_file = fopen("/tmp/ex2/pager_pid", "w");   
     fprintf(pid_file, "%d", pid);
     fclose(pid_file);
 
@@ -121,7 +120,7 @@ int main(int argc, char *argv[]) {
     }
 
     printf("Creating page table\n");
-    int page_table_fd = open("/mnt/c/Users/ikkiren/Documents/OSs/week09/tmp/ex2/pagetable", O_RDWR | O_CREAT);
+    int page_table_fd = open("/tmp/ex2/pagetable", O_RDWR | O_CREAT);
     if (page_table_fd < 0) {
         perror("open");
         exit(EXIT_FAILURE);
