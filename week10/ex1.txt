@@ -1,0 +1,25 @@
+The monitor.c file does not report any changes caused by ex1.c, but it does report changes caused by any script or bash file.
+
+Stat of the original file:
+
+File: myfile1.txt
+  Size: 33              Blocks: 0          IO Block: 512    regular file
+Device: 4dh/77d Inode: 67553994410710950  Links: 2
+Access: (0777/-rwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2023-11-14 22:52:09.580687300 +0300
+Modify: 2023-11-14 22:52:09.580687300 +0300
+Change: 2023-11-14 22:52:09.586201100 +0300
+ Birth: -
+
+Stat of the hard link:
+File: myfile11.txt
+  Size: 33              Blocks: 0          IO Block: 512    regular file
+Device: 4dh/77d Inode: 67553994410710950  Links: 2
+Access: (0777/-rwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2023-11-14 22:52:09.580687300 +0300
+Modify: 2023-11-14 22:52:09.580687300 +0300
+Change: 2023-11-14 22:52:09.586201100 +0300
+  Birth: -
+
+As we can see, after ex1.c is executed, there are still 2 hard links mentioned in the stat info.
+There is no any difference between the stat info of the original file and the hard link.
