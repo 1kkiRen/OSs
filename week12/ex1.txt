@@ -1,0 +1,23 @@
+Press E+X to exit
+Press P+E to get some information my exam
+Press C+A+P to get some cappuccino
+Press R+A to get some information about Ra
+PRESSED 0x0019 (25)
+pPRESSED 0x0012 (18)
+I passed the Exam!
+eRELEASED 0x0019 (25)
+RELEASED 0x0012 (18)
+PRESSED 0x002e (46)
+cPRESSED 0x001e (30)
+aRELEASED 0x002e (46)
+PRESSED 0x0019 (25)
+pRELEASED 0x001e (30)
+RELEASED 0x0019 (25)
+PRESSED 0x0013 (19)
+rPRESSED 0x001e (30)
+Ra (also given as Re) is the sun god of ancient Egypt. He is one of the oldest deities in the Egyptian pantheon and was later merged with others such as Horus, becoming Ra-Horakhty (the morning sun), Amun (as noonday sun), and Atum (the evening sun) associated with primal life-giving energy.
+aRELEASED 0x0013 (19)
+RELEASED 0x001e (30)
+PRESSED 0x0012 (18)
+ePRESSED 0x002d (45)
+EXIT
